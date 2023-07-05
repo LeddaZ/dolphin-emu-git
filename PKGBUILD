@@ -35,8 +35,7 @@ sha512sums=('SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
-            'SKIP'
-            'b469597fe9b4e9be6ae9ab0330fe5e3d6b944a73505775ff75f9895ae4843768f3815d4b5b8e227d6d2e87c3f4882d6d7262f9df85be0aaddf46730a7afa16dd')
+            'SKIP')
 
 _sourcedirectory="$pkgname"
 
