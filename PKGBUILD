@@ -23,13 +23,12 @@ depends=(
 makedepends=('cmake' 'git' 'ninja' 'python')
 optdepends=('pulseaudio: PulseAudio backend')
 source=(
-	"$pkgname::git+https://github.com/$_mainpkgname/$_projectname"
+	"$pkgname::git+https://github.com/LeddaZ/dolphin.git"
 	"$pkgname-implot::git+https://github.com/epezent/implot.git"
 	"$pkgname-mgba::git+https://github.com/mgba-emu/mgba.git"
 	"$pkgname-rcheevos::git+https://github.com/RetroAchievements/rcheevos.git"
 	"$pkgname-vma::git+https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git"
 	"$pkgname-zlibng::git+https://github.com/zlib-ng/zlib-ng.git"
-	'minizip-ng.diff'
 )
 sha512sums=('SKIP'
             'SKIP'
@@ -45,9 +44,6 @@ prepare() {
 	cd "$srcdir/$_sourcedirectory/"
 	if [ -d 'build/' ]; then rm -rf 'build/'; fi
 	mkdir 'build/'
-
-	# Fix minizip-ng name for Arch
-	patch --forward -p1 < "$srcdir/minizip-ng.diff"
 
 	# Provide submodules
 	declare -A _submodules=(
